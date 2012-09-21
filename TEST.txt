@@ -1,5 +1,20 @@
-TEST
-
 Forkした後に元が更新された場合の反映方法はpullの様だ。
 まずローカルのリポジトリにpullで引っ張ってきて、
 マージ・コミット後にネットワーク上のリポジトリにpushの様だ。
+
+
+
+01.Unity起動
+02.メニュー/File/Open Project
+03.Opeh Other...
+04./Program/Pictchainを開く
+05.メニュー/File/Build & Run
+06.左下のPlatformをPC and Mac Standaloneに設定
+07.右下のTarget PlatformをWindows(Windows 64-bit)に設定
+08.Build & Run
+09.適当にexeを書き出し
+
+
+
+内部の動きについては下記のシーンを開く
+/Program/Pictchain/Assets/Resources/Scene/Sandbox/Sandbox.unity

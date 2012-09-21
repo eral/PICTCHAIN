@@ -1,0 +1,7 @@
+/Pictchain/Library
+/Pictchain/Temp
+/Pictchain/*.csproj
+/Pictchain/*.pidb
+/Pictchain/*.sln
+/Pictchain/*.unityproj
+/Pictchain/*.userprefs
