@@ -1,5 +1,5 @@
 #pragma strict
 
 function Awake () {
-	Application.LoadLevel("Sandbox");
+	Application.LoadLevel("Title");
 }
