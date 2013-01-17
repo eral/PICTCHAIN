@@ -6,9 +6,7 @@
 
 
 function Awake() {
-	//position
-	//Screen.width;
-	gameObject.SetActiveRecursively(false);
+	gameObject.SetActive(false);
 }
 
 function Start () {

@@ -16,13 +16,6 @@ function Start () {
 }
 
 function Update () {
-	if (Input.anyKey)
-	{
-	}
-}
-
-function OnGUI() {
-
 	var alpha : float;
 	alpha = InputText.material.color.a;
 	if (Direction > 0)
@@ -39,4 +32,7 @@ function OnGUI() {
 	}
 	
 	InputText.material.color.a = alpha;
+}
+
+function OnGUI() {
 }
