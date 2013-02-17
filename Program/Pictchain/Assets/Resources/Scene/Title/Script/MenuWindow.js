@@ -6,7 +6,6 @@
 
 
 function Awake() {
-	gameObject.SetActive(false);
 }
 
 function Start () {

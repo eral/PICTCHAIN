@@ -1,33 +1,59 @@
 #pragma strict
 
-private var MenuWindow : GameObject;
-private var InputText : GameObject;
-private var GameStartText : GameObject;
-private var OptionText : GameObject;
+public enum SceneState
+{
+	Default = 0,	//Draw InputText
+	MenuWindow,		//Draw MenuWindow
+	Option,			//Draw Option
+};
+
+public var Title : Transform;
+public var MenuWindow : Transform;
+public var OptionMenu : Transform;
+
+private var State : SceneState;
+private var objTitle : GameObject;
+private var objMenu : GameObject;
+private var objOption : GameObject;
 
 function Awake () {
-	MenuWindow		= GameObject.Find("DummyMenuWindow");
-	InputText		= GameObject.Find("DummyInputText");
-	GameStartText	= GameObject.Find("DummyGameStartText");
-	OptionText		= GameObject.Find("DummyOptionText");
+	State = SceneState.Default;
+	//Instantiate Title
+	objTitle = Instantiate(Title) as GameObject;
 }
 
 function Start () {
-	MenuWindow.SetActive(false);
-	GameStartText.SetActive(false);
-	OptionText.SetActive(false);
-	
-	Debug.Log("MenuWindow : " + MenuWindow);
 }
 
 function Update () {
 }
 
 function OnGUI () {
-	if (Input.anyKey)
+}
+
+function ChangeState(state : SceneState)
+{
+	State = state;
+	
+	switch(State)
 	{
-		//disable "InputText" Object
-		
-		//enable "MenuWindow"
-	}	
+		case SceneState.Default:
+			Debug.Log("State : Default");
+			break;
+		case SceneState.MenuWindow:
+			Debug.Log("State : MenuWindow");
+			//Destroy Title
+			Destroy(objTitle);
+			//Instantiate MenuWindow
+			objMenu = Instantiate(MenuWindow) as GameObject;
+			break;
+		case SceneState.Option:
+			Debug.Log("State : Option");
+			break;
+	}
+}
+
+function GameStart()
+{
+	Application.LoadLevelAsync("Game");
 }
