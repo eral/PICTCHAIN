@@ -21,7 +21,9 @@ function Start () {
 		}
 	}
 	if (enabled && (0 <= m_card_index)) {
-		ChangeCardImage(m_card_index);
+		var card_index:int = m_card_index;
+		randomCChangeCard();
+		ChangeCardImage(card_index);
 	}
 
 }
