@@ -55,6 +55,12 @@ private function randomCChangeCard () {
 	color.r = Mathf.Floor(Random.value * color_depth) / (color_depth - 1.0);
 	color.g = Mathf.Floor(Random.value * color_depth) / (color_depth - 1.0);
 	color.b = Mathf.Floor(Random.value * color_depth) / (color_depth - 1.0);
+
+	var color_offset:float = 1.0 / 3.0;
+	color.r = Mathf.Lerp(color_offset, 1.0, color.r);
+	color.g = Mathf.Lerp(color_offset, 1.0, color.g);
+	color.b = Mathf.Lerp(color_offset, 1.0, color.b);
+
 	m_material.color = color;
 
 	var card_index_max = m_card_info.GetCardMax();
